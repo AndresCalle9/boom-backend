@@ -1,0 +1,43 @@
+{
+  "name": "be-storage-alegra",
+  "version": "1.0.0",
+  "description": "A service for ingredient management in the NodeJS Alegra Backend test",
+  "main": "index.ts",
+  "scripts": {
+    "test": "jest --coverage --runInBand --forceExit",
+    "start": "ts-node src/index.ts",
+    "build": "tsc",
+    "dev": "nodemon src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndresCalle9/be-storage-alegra.git"
+  },
+  "author": "andrescalle9",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndresCalle9/be-storage-alegra/issues"
+  },
+  "homepage": "https://github.com/AndresCalle9/be-storage-alegra#readme",
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.24",
+    "api-query-params": "^5.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3",
+    "express-async-errors": "^3.1.1",
+    "express-validator": "^7.0.1",
+    "mongoose": "^8.2.0",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/supertest": "^6.0.2",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4",
+    "ts-jest": "^29.1.2"
+  }
+}

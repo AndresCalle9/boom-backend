@@ -1,5 +1,5 @@
 import {Product} from '../models/products.model';
-import {getAll, getById, create, update} from '../repositories/products.repository';
+import {getAll, create, update} from '../repositories/products.repository';
 
 export const getProductsService = async (query: any) => {
       let products: Product[] = await getAll(query);
@@ -16,7 +16,9 @@ export const getProductService = async (query: any) => {
 export const createProductService = async (data: any) => {
     data.createdAt = new Date();
     data.updatedAt = new Date();
-    if (!data.quantitySold) data.quantitySold = 0;
+    data.name = {en: data.nameEn, es: data.nameEs};
+    delete data.nameEn;
+    delete data.nameEs;
     let product: Product = await create(data);
     return product
     }

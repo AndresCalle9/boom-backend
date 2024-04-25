@@ -3,7 +3,7 @@ const cors = require('cors');
 import {connect} from './config/database/mongodb';
 import { errorHandler } from './config/middlewares/error-handler-middleware';
 import 'express-async-errors';
-import ingredientsRoutes from './config/routes/products.route'
+import productRoutes from './config/routes/products.route'
 
 require('dotenv').config();
 
@@ -29,7 +29,7 @@ app.get('/health', (req: Request, res: Response) => {
 // Project dependencies
 
 // Routes
-app.use(`${process.env.API_VERSION_ROUTE}`, ingredientsRoutes);
+app.use(`${process.env.API_VERSION_ROUTE}`, productRoutes);
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);

@@ -5,7 +5,7 @@ export const validateKey = (req:Request, res: Response, next: NextFunction) => {
     const key = req.header('token');
     if (!key) return httpResponses.Unauthorized(res);
     try {
-      if (true) {
+      if (key == process.env.KEY) {
         next();
       } else {
         return httpResponses.Forbidden(res);

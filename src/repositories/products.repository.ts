@@ -1,9 +1,9 @@
-const { IngredientModel } = require('../models/ingredient.model');
+const { ProductModel } = require('../models/products.model');
 const aqp = require('api-query-params');
 
 export const getAll = async (query : any) => {
 const { filter, skip, limit, sort, projection, population } = aqp(query);
-  return IngredientModel.find(filter)
+  return ProductModel.find(filter)
   .skip(skip)
   .limit(limit)
   .sort(sort)
@@ -12,13 +12,13 @@ const { filter, skip, limit, sort, projection, population } = aqp(query);
 };
 
 export const getById = async (id : string) => {
-  return IngredientModel.findById({_id:id});
+  return ProductModel.findById({_id:id});
 };
 
 export const create = async (data : any) => {
-    return IngredientModel.create(data);
+    return ProductModel.create(data);
     }
 
 export const update = async (id: string, data : any) => {
-    return IngredientModel.findByIdAndUpdate({_id:id}, data, {new: true});
+    return ProductModel.findByIdAndUpdate({_id:id}, data, {new: true});
   }

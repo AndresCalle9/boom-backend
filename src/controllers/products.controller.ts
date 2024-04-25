@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { httpResponses} from '../config/helpers/ErrorCodes'
-import { getProductsService, getProductService, createProductService } from '../services/ingredient.service';
+import { getProductsService, getProductService, createProductService } from '../services/product.service';
 import {validationResult } from 'express-validator';
 
 export const getProducts = async (req: Request, res: Response) => {

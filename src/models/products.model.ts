@@ -7,6 +7,7 @@ export interface Product {
     category: string;
     price: number;
     unit: string;
+    enable: boolean;
     createdAt: Date;
     updatedAt: Date;
   }
@@ -18,6 +19,7 @@ export interface Product {
     category: {type: String, required: true},
     price: {type: Number, required: true},
     unit: {type: String, required: true},
+    enable: {type: Boolean},
     createdAt: {type:Date},
     updatedAt:{type:Date},
   });

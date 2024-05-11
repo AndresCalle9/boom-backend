@@ -8,6 +8,7 @@ export interface Product {
   price: number;
   unit: string;
   enable: boolean;
+  specialIcon: boolean;
   qty: number;
   createdAt: Date;
   updatedAt: Date;
@@ -21,6 +22,7 @@ const ProductsSchema = new mongoose.Schema<Product>({
   price: { type: Number, required: true },
   unit: { type: String, required: true },
   enable: { type: Boolean },
+  specialIcon: { type: Boolean },
   qty: { type: Number },
   createdAt: { type: Date },
   updatedAt: { type: Date },

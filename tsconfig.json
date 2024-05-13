@@ -1,12 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
+    "target": "es5",                          
+    "module": "commonjs",                    
+    "lib": ["es6"],  
+    "allowJs": true,
     "outDir": "./dist",
+    "rootDir": "src",
     "strict": true,
+    "noImplicitAny": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "resolveJsonModule": true,
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "./coverage", "./dist", "__tests__", "jest.config.js"]

@@ -14,10 +14,7 @@ export const getProductService = async (query: any) => {
 export const createProductService = async (data: any) => {
   data.createdAt = new Date();
   data.updatedAt = new Date();
-  data.name = { en: data.nameEn, es: data.nameEs };
   data.enable = true;
-  delete data.nameEn;
-  delete data.nameEs;
   let product: Product = await create(data);
   return product;
 };

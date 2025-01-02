@@ -26,7 +26,7 @@ export const getProduct = async (req: Request, res: Response) => {
     const errors = validationResult(req);
     if (!errors.isEmpty())
       return res.status(400).json({ errors: errors.array() });
-    const id = req.query.id;
+    const id = req.query?.id ? req.query.id : '';
     const product = await getProductService(id);
     if (!product) return httpResponses.NotFound(res, 'Product not found');
     return httpResponses.Ok(res, product);
@@ -61,7 +61,7 @@ export const updateProduct = async (req: Request, res: Response) => {
 
 export const deleteProduct = async (req: Request, res: Response) => {
   try{
-    const id = req.query.id
+    const id = req.query?.id ? req.query.id : ''
     const response = await deleteProductService(id);
     return httpResponses.Ok(res,response)
   } catch (error: any){

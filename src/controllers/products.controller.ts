@@ -27,7 +27,7 @@ export const getProduct = async (req: Request, res: Response) => {
     if (!errors.isEmpty())
       return res.status(400).json({ errors: errors.array() });
     const id = Array.isArray(req.query?.id) ? req.query.id[0] : req.query.id || '';
-    const product = await getProductService(id);
+    const product = await getProductService(String(id));
     if (!product) return httpResponses.NotFound(res, 'Product not found');
     return httpResponses.Ok(res, product);
   } catch (error: any) {
@@ -62,7 +62,7 @@ export const updateProduct = async (req: Request, res: Response) => {
 export const deleteProduct = async (req: Request, res: Response) => {
   try{
     const id = Array.isArray(req.query?.id) ? req.query.id[0] : req.query.id || '';
-    const response = await deleteProductService(id);
+    const response = await deleteProductService(String(id));
     return httpResponses.Ok(res,response)
   } catch (error: any){
     return httpResponses.Error(res, error.message || 'Internal server error');

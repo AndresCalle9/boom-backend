@@ -27,6 +27,6 @@ export const updateProductService = async (id: string, data: any) => {
   return product;
 };
 
-export const deleteProductService = async (id: strin) => {
+export const deleteProductService = async (id: string) => {
   return await deleteProduct(id)
 }

@@ -24,5 +24,5 @@ export const update = async (id: string, data : any) => {
   }
 
 export const deleteProduct = async (id: string) => {
-  return ProductModel.findByidAndDelete({_id:id})
+  return ProductModel.findByIdAndDelete({_id:id})
 }

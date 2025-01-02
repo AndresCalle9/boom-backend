@@ -22,3 +22,7 @@ export const create = async (data : any) => {
 export const update = async (id: string, data : any) => {
     return ProductModel.findByIdAndUpdate({_id:id}, data, {new: true});
   }
+
+export const deleteProduct = async (id: string) => {
+  return ProductModel.findByidAnddelete({_id:id})
+}

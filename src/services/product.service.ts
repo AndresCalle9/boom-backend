@@ -1,5 +1,5 @@
 import { Product } from '../models/products.model';
-import { getAll, create, update } from '../repositories/products.repository';
+import { getAll, getById, create, update, deleteProduct } from '../repositories/products.repository';
 
 export const getProductsService = async (query: any) => {
   let products: Product[] = await getAll(query);
@@ -7,8 +7,9 @@ export const getProductsService = async (query: any) => {
   return products;
 };
 
-export const getProductService = async (query: any) => {
-  return 'product';
+export const getProductService = async (id: string) => {
+  const product: Product = await getById(id);
+  return product;
 };
 
 export const createProductService = async (data: any) => {
@@ -25,3 +26,7 @@ export const updateProductService = async (id: string, data: any) => {
 
   return product;
 };
+
+export const deleteProductService = async (id: strin) => {
+  return await deleteProduct(id)
+}

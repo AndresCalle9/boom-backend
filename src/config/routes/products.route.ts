@@ -4,6 +4,7 @@ import {
   getProduct,
   createProduct,
   updateProduct,
+  deleteProduct
 } from '../../controllers/products.controller';
 import { createProductDto, getProductDto } from '../dto/Products.dto';
 import { validateKey } from '../middlewares/tokenValidation.middleware';
@@ -23,5 +24,9 @@ router.post('/product', createProductDto, (req: any, res: any) => {
 router.put('/product', (req: any, res: any) => {
   updateProduct(req, res);
 });
+
+router.delete('/product',(req: any, res: any)=>{
+  deleteProduct(req,res)
+})
 
 export default router;

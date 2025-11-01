@@ -1,5 +1,5 @@
 {
-  "name": "be-storage-alegra",
+  "name": "boom-backend",
   "version": "1.0.0",
   "description": "A service for ingredient management in the NodeJS Alegra Backend test",
   "main": "index.ts",
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/AndresCalle9/be-storage-alegra#readme",
   "dependencies": {
     "@types/express": "^4.17.21",
+    "@types/mongoose": "^5.11.96",
     "@types/node": "^20.11.24",
     "api-query-params": "^5.4.0",
     "cors": "^2.8.5",
